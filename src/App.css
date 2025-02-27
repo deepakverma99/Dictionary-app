@@ -2,7 +2,8 @@
 'https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url(
 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,800;1,300&display=swap');
-:root{
+
+:root {
   background-color: #f6f6f6;
   display: flex;
   justify-content: center;
@@ -10,17 +11,17 @@
   margin: 0;
   padding: 0;
 }
+
 .App {
- 
   height: 95vh;
   width: 70vw;
-  margin-top:3rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f6f6f6;
   background-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);
-  font-family:'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   box-shadow: 0px 5px 4px #439e34;
   border-radius: 5px;
 }
@@ -30,27 +31,26 @@ h1 {
   font-size: 3em;
   font-family: 'Pacifico', cursive;
   color: #4DB33D;
-  /* padding: e; */
 }
 
-h2{
+h2 {
   font-size: 30px;
   text-decoration: underline;
   padding-bottom: 20px;
 }
 
-h4{
+h4 {
   color: #4DB33D;
 }
 
-input{
+input {
   width: 400px;
   height: 38px;
   font-size: 20px;
   padding-left: 10px;
 }
 
-.searchBox > button{
+.searchBox > button {
   background-color: #4DB33D;
   height: 38px;
   width: 60px;
@@ -61,13 +61,53 @@ input{
   padding: 0;
 }
 
-.showResults{
+.showResults {
   width: 500px;
   padding: 20px;
 }
 
-.showResults > h2 > button{
+.showResults > h2 > button {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
+  .App {
+    width: 90vw;
+  }
+  input {
+    width: 100%;
+  }
+  .showResults {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+  .App {
+    width: 95vw;
+    height: auto;
+    padding: 20px;
+  }
+  input {
+    width: 100%;
+  }
+  .showResults {
+    width: 100%;
+  }
 }
