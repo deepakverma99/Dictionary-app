@@ -23,6 +23,13 @@ function App() {
     let audio = new Audio(data.phonetics[0].audio);
     audio.play();
   }
+
+  function capitalizeFirstLetter(str) {
+  if (typeof str !== 'string' || str.length === 0) {
+    return str; // Return as is if not a string or empty
+  }
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
   return (
     <div className="App">
       <h1> Free Dictionary</h1>
@@ -32,14 +39,14 @@ function App() {
       </div>
       {data && (
         <div className="showResults">
-          <h2>{data.word}{" "}
-            <button onClick={() => {playAudio()}}><FcSpeaker size="26px" /></button>
+          <h2>{capitalizeFirstLetter(data.word)}{" "}
+            <button onClick={() => (speechSynthesis.speak(new SpeechSynthesisUtterance(text.innerText)))}><FcSpeaker size="26px" /></button>
           </h2>
 
           <h4>Parts of speech:</h4>
           <p>{data.meanings[0].partOfspeech}</p>
           <h4>Definitions:</h4>
-          <p>{data.meanings[0].definitions[0].definition}</p>
+          <p id='text'>{capitalizeFirstLetter(data.word)}{" "}{data.meanings[0].definitions[0].definition}</p>
           <h4>Example:</h4>
           <p>{data.meanings[0].definitions[0].example ||  "Examples are not available!"}</p>
         </div>
